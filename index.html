@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <title>Git it Done</title>
+</head>
+
+<body>
+    <header class="bg-black text-center text-white p-3 h-40 ">
+        <div class="inline-block align-middle">
+            <h1 class="text-6xl ">Welcome to Word Party!</h1>
+        </div>
+    </header>
+    <main class="border-solid border-2 h-40">
+        <section class="text-center pt-6">
+            <p class="text-xl ">It’s so much fun! All you need to do is type in any word, and we’ll give you the definition and a suggested GIF to send to your friends.</p>
+        </section>
+        <section>
+            <div class="">
+                <form class="">
+                    <input type="text" id="entryField" value="Enter Your Favorite Word" class="border-solid border-2">
+                    <button id="searchBtn" class="bg-red-500 w-16 h-6" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            <div>
+                <div id="definition" class="border-solid border-2"></div>
+                <div id="gif" class="border-solid border-2"></div>
+            </div>
+        </section>    
+        
+    </main>
+
+    <div>
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./script.js"></script>
+</body>
