@@ -1,6 +1,6 @@
 var defKey = "f3c52c90-008b-4455-b175-2d43e6e996af";
 var giphyKey = "jCojN0t1UlrJ7c9lCdhqS3UMkGvT9924";
-
+var definitionBox = document.getElementById("definitionBox");
 
 var definition = () => {
   var txt = $("#entryField").val();
@@ -18,11 +18,12 @@ var definition = () => {
 
 // Display word definition
 var displayDefinition = (data) => {
-  console.log(data);
+  
   $.each(data[0].shortdef, function(i, value){
-    console.log(value);
+    
     $("#definitionBox").append(value + '<br>')
-  })
+  });
+
 }
  
 
@@ -48,6 +49,7 @@ var giphy = () => {
 // Word search listener
 $("#searchBtn").on("click",(event) => {
   event.preventDefault();
+  definitionBox.innerHTML = "";
   definition(event)
   giphy(event);
 });
