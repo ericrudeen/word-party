@@ -19,6 +19,13 @@ var definition = () => {
 
 // Display word definition
 var displayDefinition = (data) => {
+
+  var defHTML = `<li>${data[0].hwi.prs[0].mw}</li>`;
+  $("#definitionBox").html(defHTML)
+  var def3HTML = `<li><i><em>${data[0].fl}</em></i></li>`;
+  
+  $("#definitionBox").append(def3HTML);
+  
   
   $.each(data[0].shortdef, (i, value) => {
     
