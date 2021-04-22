@@ -12,49 +12,46 @@
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Git it Done</title>
   </head>
 
-  <body>
-    <header class="bg-black text-center text-white p-3 h-40">
-      <div class="inline-block align-middle">
-        <h1 class="text-6xl">Welcome to Word Party!</h1>
+  <body class="container mx-auto max-w-7xl py-4 bg-black">
+    <header class="container mx-auto flex justify-center">
+      <div class="flex justify-center">
+        <img src="./assets/images/Word Party (1).png"> 
       </div>
     </header>
-    <main class="border-solid border-2 h-40">
-      <section class="text-center pt-6">
-        <p class="text-xl">
+    <main class="container mx-auto w-full">
+      <!--<section class="container mx-auto flex flex-col text-center w-3/4 pl-6 pb-6 pr-6 h-24">
+        <p class="text-xl text-gray-400">
           It’s so much fun! All you need to do is type in any word, and we’ll
           give you the definition and a suggested GIF to send to your friends.
         </p>
-      </section>
-      <section>
-        <div class="">
-          <form class="text-center" id="form">
-            <input 
-              type="text"
-              id="entryField" class="h-12 w-23 border-solid border-2"
-              value="Enter Your Favorite Word"
-              
-            />
-            
-            <button id="searchBtn" class="bg-red-500 w-20 h-8" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </form>
-        </div>
-        <div>
-          <div id="definitionBox" class="border-solid border-2"></div>
-          <div id="gifBox" class="border-solid border-2"></div>
+      </section>-->
+      <section class="container mx-auto p-6">
+
+
+
+
+        <form class="container mx-auto flex flex-row justify-center text-center pl-6 pb-6 pr-6 h-24 w-44" id="form">
+          <input type="text" id="entryField" class="focus:ring-2 focus:ring-blue-600 w-full pl-2" placeholder="Enter Your Favorite Word"/>
+          <button id="searchBtn" class="bg-gradient-to-r from-green-400 to-blue-500 w-20 transform transition duration-500 hover:scale-90 hover:opacity-50" type="submit">
+            <i class="fas fa-search fa-2x text-white"></i>
+          </button>
+        </form>
+
+
+
+        <div class="container mx-auto flex flex-col justify-center lg:flex-row p-6 w-3/4">
+          <div id="gifBox" class="flex justify-center lg:w-1/2"></div>
+          <div id="definitionBox" class="lg:w-1/2 text-xl text-gray-400"></div>
         </div>
       </section>
     </main>
 
-    <div></div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!--<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>-->
-    <script src="./script.js"></script>
+    <script src="./assets/script.js"></script>
   </body>
 </html>
