@@ -5,6 +5,7 @@ let giphyBox = document.querySelector("#gifBox");
 let input = document.querySelector("#entryField")
 let localStorageSearch = document.querySelector("#localStorage");
 
+
 // Dictionary API **********
 const definition = (txt) => {
   var txt = txt;
@@ -14,7 +15,7 @@ const definition = (txt) => {
         return Response.json();
     })
     .then((data) => {
-      console.log(data);
+      
       displayDefinition(data);
       return data;
         });
@@ -23,7 +24,6 @@ const definition = (txt) => {
 
 // Display word definition **********
 const displayDefinition = (data) => {
-
   /**
    * Check if the word can be defined as the smallest sequence of 
    * phonemes uttered in isolation with objective or practical meaning.
@@ -32,15 +32,14 @@ const displayDefinition = (data) => {
   if (data[0].fl){
     //adding the volume icon and sound
     var def2HTML=`<i class="fas fa-volume-up fa-2x" onclick="playSound('${data[0].hwi.hw}')"></i>`;
-    $("#definitionBox").html(def2HTML);
     const defHTML = `<p>${data[0].hwi.prs[0].mw}</p>
                       <p><i><em>${data[0].fl}</em></i></p>
                       <hr>`;
                       
-    $("#definitionBox").append(defHTML);
+    $("#definitionBox").append(def2HTML, defHTML);
 
     $.each(data[0].shortdef, (i, value) => {
-
+      // console.log();
     $("#definitionBox").append(`<li>` + value + '<br>');
     });
     giphy(data);
@@ -49,7 +48,8 @@ const displayDefinition = (data) => {
     $("#definitionBox").html(`<h3 style="color:yellow;">Suggestion</h3>`+`<br>`);
     $.each(data, (i, value) => {
 
-      $("#definitionBox").append(`<option>` + value + '<br>');})
+      $("#definitionBox").append(`<option onclick='selector(event)'>${value}</option><br>`);})
+      
   }
 }
 else {
@@ -77,7 +77,7 @@ const giphy = (data) => {
   });
 };
 
-// Display localStorage
+// Display localStorage **********
 var searchText = () => {
   
   var searchValue = $("#entryField").val();
@@ -86,6 +86,7 @@ var searchText = () => {
   var partyText = "Making a Party with the Word: "
   $("#localStorage").append(`<p>` +partyText +appendValue + '</p>').attr("class", "ml-48 mr-48 pl-6 pr-6 pb-1 text-white bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-3xl text-center")
 };
+
 
 // Word search listener **********
 $("#searchBtn").on("click",(event) => {
@@ -108,17 +109,22 @@ $("#searchBtn").on("click",(event) => {
     
   };
 });
-//play sound 
+
+
+
+//play sound **********
 function playSound(msg){
-  console.log(msg);
   var sound=new SpeechSynthesisUtterance();
   sound.text=msg
   window.speechSynthesis.speak(sound);
 }
  
 
-
-
+// Get select option text then auto-complete search box **********
+function selector(event) {
+  const displayText = event.target.text;
+  input.value = displayText;
+};
 
 
 
