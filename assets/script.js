@@ -30,10 +30,14 @@ const displayDefinition = (data) => {
    */
   if (data.length > 1) {
   if (data[0].fl){
+    //adding the volume icon and sound
+    var def2HTML=`<i class="fas fa-volume-up fa-2x" onclick="playSound('${data[0].hwi.hw}')"></i>`;
+    $("#definitionBox").html(def2HTML);
     const defHTML = `<p>${data[0].hwi.prs[0].mw}</p>
                       <p><i><em>${data[0].fl}</em></i></p>
                       <hr>`;
-    $("#definitionBox").html(defHTML);
+                      
+    $("#definitionBox").append(defHTML);
 
     $.each(data[0].shortdef, (i, value) => {
 
@@ -92,6 +96,16 @@ $("#searchBtn").on("click",(event) => {
     
   };
 });
+//play sound 
+function playSound(msg){
+  console.log(msg);
+  var sound=new SpeechSynthesisUtterance();
+  sound.text=msg
+  window.speechSynthesis.speak(sound);
+}
+ 
+
+
 
 
 
