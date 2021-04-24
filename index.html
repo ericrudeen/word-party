@@ -12,46 +12,42 @@
       href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css" />
-    <title>Git it Done</title>
+    <title>Welcome to Word Party!</title>
   </head>
 
-  <body class="container mx-auto max-w-7xl py-4 bg-black">
+  <body style="font-family: 'Oswald', sans-serif;" class="container mx-auto flex flex-col max-w-7xl py-4 bg-black">
+    <!-- Header -->
     <header class="container mx-auto flex justify-center">
       <div class="flex justify-center">
         <img src="./assets/images/Word Party (1).png"> 
       </div>
     </header>
+
+    <!-- Main Content -->
     <main class="container mx-auto w-full">
-      <!--<section class="container mx-auto flex flex-col text-center w-3/4 pl-6 pb-6 pr-6 h-24">
-        <p class="text-xl text-gray-400">
-          It’s so much fun! All you need to do is type in any word, and we’ll
-          give you the definition and a suggested GIF to send to your friends.
-        </p>
-      </section>-->
       <section class="container mx-auto p-6">
-
-
-
-
+        <!-- Search Form -->
         <form class="container mx-auto flex flex-row justify-center text-center pl-6 pb-6 pr-6 h-24 w-44" id="form">
-          <input type="text" id="entryField" class="focus:ring-2 focus:ring-blue-600 w-full pl-2" placeholder="Enter Your Favorite Word"/>
+          <input type="text" id="entryField" class="focus:ring-1 focus:ring-blue-600 w-full pl-2" style="font-family:Arial, Helvetica, sans-serif" placeholder="Enter Your Favorite Word to Start the Party!"/>
           <button id="searchBtn" class="bg-gradient-to-r from-green-400 to-blue-500 w-20 transform transition duration-500 hover:scale-90 hover:opacity-50" type="submit">
             <i class="fas fa-search fa-2x text-white"></i>
           </button>
         </form>
-
-
-
+        <!-- Local Storage Module -->
+        <div class="container mx-auto flex justify-center p-6 w-44" id="localStorage"></div>
+        <!-- API Boxes -->
         <div class="container mx-auto flex flex-col justify-center lg:flex-row p-6 w-3/4">
-          <div id="gifBox" class="flex justify-center lg:w-1/2"></div>
-          <div id="definitionBox" class="lg:w-1/2 text-xl text-gray-400"></div>
+          <!-- Gif Box -->
+          <div id="gifBox" class="flex justify-center md:mr-2 lg:w-1/2"></div>
+          <!-- Definition Box -->
+          <div id="definitionBox" class="lg:w-1/2 sm:mt-2 md:ml-2 text-xl text-gray-400"></div>
         </div>
       </section>
     </main>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!--<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>-->
     <script src="./assets/script.js"></script>
   </body>
 </html>

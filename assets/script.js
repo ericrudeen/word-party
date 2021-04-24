@@ -3,7 +3,7 @@ let giphyKey = "XHrYYSVO6qb5aOsRTIJaoCBtMqqC1oC1";
 let definitionBox = document.querySelector("#definitionBox"); 
 let giphyBox = document.querySelector("#gifBox");
 let input = document.querySelector("#entryField")
-
+let localStorageSearch = document.querySelector("#localStorage");
 
 // Dictionary API **********
 const definition = (txt) => {
@@ -77,10 +77,22 @@ const giphy = (data) => {
   });
 };
 
+// Display localStorage
+var searchText = () => {
+  
+  var searchValue = $("#entryField").val();
+  localStorage.setItem("search", searchValue);
+  var appendValue = localStorage.getItem("search")
+  var partyText = "Making a Party with the Word: "
+  $("#localStorage").append(`<p>` +partyText +appendValue + '</p>').attr("class", "ml-48 mr-48 pl-6 pr-6 pb-1 text-white bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-3xl text-center")
+};
 
 // Word search listener **********
 $("#searchBtn").on("click",(event) => {
   event.preventDefault();
+  localStorage.clear();
+  localStorageSearch.innerHTML = "";
+  searchText();
   definitionBox.innerHTML = "";
   giphyBox.innerHTML = "";
   let txt = input.value;
