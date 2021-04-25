@@ -31,7 +31,8 @@ const displayDefinition = (data) => {
   if (data.length > 1) {
   if (data[0].fl){
     //adding the volume icon and sound
-    var def2HTML=`<i class="fas fa-volume-up fa-2x" onclick="playSound('${data[0].hwi.hw}')"></i>`;
+    var searchValue = $("#entryField").val();
+    var def2HTML=`<i class="fas fa-volume-up fa-2x" onclick="playSound('${searchValue}')"></i>`;
     const defHTML = `<p>${data[0].hwi.prs[0].mw}</p>
                       <p><i><em>${data[0].fl}</em></i></p>
                       <hr>`;
