@@ -1,4 +1,4 @@
-# group-3-project
+# Word-Party
 
 For this project our team had to work together to develop a web application from scratch. We made an applicaiton called "Word Party". When the user submits a word into Word Party via the input field, Word Party returns information about the word from dictionary.com (notably definitions, pronunciation, and phonetics), and a GIF from Giphy that is associated with that word. 
 
@@ -31,8 +31,8 @@ Here was our approach:
   * The application was interactive and responsive. 
 
 
-Github Pages Link: https://ericrudeen.github.io/group-3-project/ 
-Github Repo Link: https://github.com/ericrudeen/group-3-project
+Github Pages Link: https://ericrudeen.github.io/word-party/
+Github Repo Link: https://github.com/ericrudeen/word-party
 
 
 ![screencapture-ericrudeen-github-io-group-3-project-2021-04-24-11_12_57](./assets/images/screencapture-ericrudeen-github-io-group-3-project-2021-04-24-11_12_57.png)
